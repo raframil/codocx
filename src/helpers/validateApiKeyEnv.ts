@@ -1,8 +1,8 @@
-import dotenv from "dotenv";
 import { isCancel, log, text } from "@clack/prompts";
+import dotenv from "dotenv";
 
-import { apiKey } from "../utils/apiKey.ts";
 import { OPENAI_API_KEY_REQUIRED } from "../constants/errors.ts";
+import { apiKey } from "../utils/apiKey.ts";
 import { cancel } from "../utils/prompt.ts";
 
 export async function configApiKeyEnv() {
@@ -12,7 +12,7 @@ export async function configApiKeyEnv() {
         log.warn(OPENAI_API_KEY_REQUIRED);
 
         const value = await text({
-            message: `Digite sua chave de api da OpenAI (Você pode gerar uma em https://platform.openai.com/account/api-keys): `,
+            message: `Insira sua chave de API da OpenAI. Você pode gerar uma nova chave no portal da OpenAI https://platform.openai.com/api-keys:`,
             placeholder: "sk-proj-Bf4JfR45...",
         });
 
